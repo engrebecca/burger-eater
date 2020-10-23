@@ -2,6 +2,16 @@
 
 <h2>Burgers to Eat</h2>
 
+<ul>
+    {{#each burgers}}
+    <li>
+        <p>ID: {{id}}</p>
+        <p>Burger: {{burger_name}}</p>
+        <p>Devoured: {{devoured}}</p>
+    </li>
+    {{/each}}
+</ul>
+
 {{!-- <ul>
     {{#each cats}}
     {{#unless sleepy}}
