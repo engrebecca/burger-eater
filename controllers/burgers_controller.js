@@ -17,7 +17,7 @@ router.get("/", function (req, res) {
     });
 });
 
-// // Route for adding a burger to the database
+// Route for adding a burger to the database
 router.post("/api/burgers", function (req, res) {
     console.log(req.body.name);
     burger.insertOne([req.body.name], function (result) {
@@ -26,23 +26,24 @@ router.post("/api/burgers", function (req, res) {
     });
 });
 
-// // Route for updating a burger in the database to be "devoured"
-// router.put("/api/cats/:id", function (req, res) {
-//     var condition = "id = " + req.params.id;
+// Route for updating a burger in the database to be "devoured"
+// newValue = devoured id=burgerId
+router.put("/api/burgers/:id", function (req, res) {
+    var burgerId = req.params.id;
+    var isDevoured = req.body.burgerEaten;
 
-//     console.log("condition", condition);
+    console.log(burgerId);
+    console.log(isDevoured);
 
-//     cat.update({
-//         sleepy: req.body.sleepy
-//     }, condition, function (result) {
-//         if (result.changedRows == 0) {
-//             // If no rows were changed, then the ID must not exist, so 404
-//             return res.status(404).end();
-//         } else {
-//             res.status(200).end();
-//         }
-//     });
-// });
+    burger.updateOne(burgerId, function (result) {
+        if (result.changedRows == 0) {
+            // If no rows were changed, then the ID must not exist, so 404
+            return res.status(404).end();
+        } else {
+            res.status(200).end();
+        }
+    });
+});
 
 // Export routes for server.js to use.
 module.exports = router;
