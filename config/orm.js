@@ -14,7 +14,7 @@ let orm = {
 
     // insertOne() method
     insertOne: function (tableName, colName, newValue, cb) {
-        var queryString = "INSERT INTO ?? (??) VALUES ?";
+        var queryString = "INSERT INTO ?? (??) VALUES (?)";
         connection.query(queryString, [tableName, colName, newValue], function (err, result) {
             if (err) throw err;
             cb(result);

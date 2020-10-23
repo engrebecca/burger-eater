@@ -18,16 +18,13 @@ router.get("/", function (req, res) {
 });
 
 // // Route for adding a burger to the database
-// router.post("/api/cats", function (req, res) {
-//     cat.create([
-//         "name", "sleepy"
-//     ], [
-//         req.body.name, req.body.sleepy
-//     ], function (result) {
-//         // Send back the ID of the new quote
-//         res.json({ id: result.insertId });
-//     });
-// });
+router.post("/api/burgers", function (req, res) {
+    console.log(req.body.name);
+    burger.insertOne([req.body.name], function (result) {
+        // Send back the ID of the new quote
+        res.json({ id: result.insertId });
+    });
+});
 
 // // Route for updating a burger in the database to be "devoured"
 // router.put("/api/cats/:id", function (req, res) {
