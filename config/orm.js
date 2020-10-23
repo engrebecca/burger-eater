@@ -6,7 +6,6 @@ let orm = {
     // selectAll() method
     selectAll: function (tableName, cb) {
         var queryString = "SELECT * FROM ??";
-        console.log(queryString);
         connection.query(queryString, [tableName], function (err, result) {
             if (err) throw err;
             cb(result);
@@ -16,7 +15,6 @@ let orm = {
     // insertOne() method
     insertOne: function (tableName, colName, newValue, cb) {
         var queryString = "INSERT INTO ?? (??) VALUES ?";
-        console.log(queryString);
         connection.query(queryString, [tableName, colName, newValue], function (err, result) {
             if (err) throw err;
             cb(result);
@@ -26,7 +24,6 @@ let orm = {
     // updateOne() method
     updateOne: function (tableName, colName, newValue, id, cb) {
         var queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
-        console.log(queryString);
         connection.query(queryString, [tableName, colName, newValue, id], function (err, result) {
             if (err) throw err;
             cb(result);
