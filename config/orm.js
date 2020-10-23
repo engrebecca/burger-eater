@@ -4,29 +4,32 @@ var connection = require("../config/connection.js");
 let orm = {
 
     // selectAll() method
-    selectAll: function (tableName) {
+    selectAll: function (tableName, cb) {
         var queryString = "SELECT * FROM ??";
+        console.log(queryString);
         connection.query(queryString, [tableName], function (err, result) {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         });
     },
 
     // insertOne() method
-    insertOne: function (tableName, valueName, newValue) {
-        var queryString = "INSERT INTO ?? (?) VALUES ?";
-        connection.query(queryString, [tableName, valueName, newValue], function (err, result) {
+    insertOne: function (tableName, colName, newValue, cb) {
+        var queryString = "INSERT INTO ?? (??) VALUES ?";
+        console.log(queryString);
+        connection.query(queryString, [tableName, colName, newValue], function (err, result) {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         });
     },
 
     // updateOne() method
-    updateOne: function (tableName, colName, newValue, id) {
+    updateOne: function (tableName, colName, newValue, id, cb) {
         var queryString = "UPDATE ?? SET ?? = ? WHERE id = ?";
+        console.log(queryString);
         connection.query(queryString, [tableName, colName, newValue, id], function (err, result) {
             if (err) throw err;
-            console.log(result);
+            cb(result);
         });
     }
 };
