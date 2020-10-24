@@ -1,48 +1,57 @@
-<h1>Burger Eater!</h1>
+<div class="container bg-warning">
+    <i class="fas fa-hamburger fa-10x d-flex justify-content-center"></i>
+    <h1 class="text-danger text-center">Burger Eater!</h1>
 
-<h2>Burgers to Eat</h2>
-
-{{!-- <ul>
-    {{#each burgers}}
-    <li>
-        <p>ID: {{id}}</p>
-        <p>Burger: {{burger_name}}</p>
-        <p>Devoured: {{devoured}}</p>
-    </li>
-    {{/each}}
-</ul> --}}
-
-<ul>
-    {{#each burgers}}
-    {{#unless devoured}}
-    <li>
-        {{burger_name}}
-        <button class="eat-btn" data-id="{{id}}">
-            EAT
-        </button>
-    </li>
-    {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>Burgers Eaten</h2>
-
-<ul>
-    {{#each burgers}}
-    {{#if devoured}}
-    <li>
-        {{burger_name}}
-    </li>
-    {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add a Burger</h2>
-<form class="create-form">
-
-    <div class="form-group">
-        <label for="newBurger">Burger Name:</label>
-        <input type="text" id="newBurger" name="name">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <div class="card bg-warning border border-danger m-3">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Burgers to Eat</h2>
+                        <ul>
+                            {{#each burgers}}
+                            {{#unless devoured}}
+                            <li class="m-1 d-flex justify-content-center">
+                                {{burger_name}}
+                                <button class="btn btn-danger ml-3 eat-btn" data-id="{{id}}">
+                                    EAT
+                                </button>
+                            </li>
+                            {{/unless}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card bg-warning border border-danger m-3">
+                    <div class="card-body">
+                        <h2 class="card-title text-center">Burgers Eaten</h2>
+                        <ul>
+                            {{#each burgers}}
+                            {{#if devoured}}
+                            <li class="m-1 d-flex justify-content-center">
+                                {{burger_name}}
+                            </li>
+                            {{/if}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <button type="submit">Add Burger</button>
-</form>
+
+    <div class="card bg-warning border border-danger m-3">
+        <div class="card-body">
+            <h2 class="card-title text-center">Add a Burger</h2>
+            <form class="create-form d-flex justify-content-center">
+                <div class="form-group">
+                    <label for="newBurger">Burger Name:</label>
+                    <input type="text" id="newBurger" name="name">
+                </div>
+                <button class="btn btn-danger ml-3" type="submit">Add Burger</button>
+            </form>
+        </div>
+    </div>
+</div>
