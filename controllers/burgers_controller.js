@@ -27,7 +27,6 @@ router.post("/api/burgers", function (req, res) {
 });
 
 // Route for updating a burger in the database to be "devoured"
-// newValue = devoured id=burgerId
 router.put("/api/burgers/:id", function (req, res) {
     var burgerId = req.params.id;
     var isDevoured = req.body.burgerEaten;

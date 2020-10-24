@@ -1,10 +1,11 @@
 <div class="container bg-warning">
     <i class="fas fa-hamburger fa-10x d-flex justify-content-center"></i>
     <h1 class="text-danger text-center">Burger Eater!</h1>
-
-    <div class="container">
+    {{!-- Main section that contains burgers and burgers eaten --}}
+    <main class="container">
         <div class="row">
-            <div class="col-sm">
+            {{!-- Column for burgers to eat --}}
+            <section class="col-sm">
                 <div class="card bg-warning border border-danger m-3">
                     <div class="card-body">
                         <h2 class="card-title text-center">Burgers to Eat</h2>
@@ -22,8 +23,9 @@
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm">
+            </section>
+            {{!-- Column for burgers eaten --}}
+            <section class="col-sm">
                 <div class="card bg-warning border border-danger m-3">
                     <div class="card-body">
                         <h2 class="card-title text-center">Burgers Eaten</h2>
@@ -38,11 +40,11 @@
                         </ul>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
-    </div>
-
-    <div class="card bg-warning border border-danger m-3">
+    </main>
+    {{!-- Section for adding a burger --}}
+    <section class="card bg-warning border border-danger m-3">
         <div class="card-body">
             <h2 class="card-title text-center">Add a Burger</h2>
             <form class="create-form d-flex justify-content-center">
@@ -53,5 +55,5 @@
                 <button class="btn btn-danger ml-3" type="submit">Add Burger</button>
             </form>
         </div>
-    </div>
+    </section>
 </div>
