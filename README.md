@@ -24,7 +24,7 @@ Burger Eater is a restaurant app that allows users to input names of burgers the
 * [Git](https://git-scm.com/) - version control system to track changes in source code
 * [GitHub](https://github.com/) - hosts repository and deploys page on GitHub
 
-# Deployed Link
+## Deployed Link
 [Burger Eater](https://gentle-ravine-75501.herokuapp.com/) - Burger Eater App
 
 ## Code
